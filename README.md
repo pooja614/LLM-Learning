@@ -6,7 +6,7 @@ Currently the project is not yet completed. Have uploaded only few sections.
 
 For the below project using Olist Dataset. 
 Expected Structure: 
-
+<pre>
 text_to_sql/
 ├── db/
 │   └── mysql_client.py          # executes SQL only
@@ -28,3 +28,4 @@ text_to_sql/
 │
 ├── main.py                      # orchestrates flow
 └── api.py    
+</pre>
