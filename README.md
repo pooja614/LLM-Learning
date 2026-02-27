@@ -1,7 +1,7 @@
 ### LLM Learning
 
 Youtube vedios and course completed: 
-
+<pre>
 * Completed 7 vedios in this playlist
      https://www.youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0 
   -  Got an overview. 
@@ -18,6 +18,7 @@ Currently my study project is not yet completed. Have uploaded only few sections
 
 For the study project using Olist Dataset. 
 Expected Structure: 
+     </pre>
 <pre>
 text_to_sql/
 ├── db/
