@@ -14,8 +14,21 @@ Youtube vedios and course completed:
 
 Currently I am in learning phase to shift towards LLM tasks. 
 
-Currently my study project is not yet completed. Have uploaded only few sections. 
-
+My study project is not yet completed. Have uploaded only few sections in this repository. 
+What has been done in the project so far: 
+* Select dataset and preprocess it. 
+* Add it to MySQL database and define primary key, foreign key constraints via python script. 
+* Create a metadata which stores schema and definition of the database which will be stored in vector database. 
+<pre>
+Embedding
+   ↓
+Vector DB (schema search)
+   ↓
+Relevant schema snippets
+   ↓
+LLM prompt
+   
+</pre>
 For the study project using Olist Dataset. 
 Expected Structure: 
    
@@ -41,4 +54,6 @@ text_to_sql/
 │
 ├── main.py                      # orchestrates flow
 └── api.py    
-</pre>
+</pre> 
+
+
