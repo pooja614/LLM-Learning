@@ -1,0 +1,261 @@
+[
+    {
+        "table": "olist_customers",
+        "column": "customer_id",
+        "type": "VARCHAR",
+        "description": "Primary key identifying a customer record"
+    },
+    {
+        "table": "olist_customers",
+        "column": "customer_unique_id",
+        "type": "VARCHAR",
+        "description": "Stable identifier representing the same customer across multiple orders"
+    },
+    {
+        "table": "olist_customers",
+        "column": "customer_zip_code_prefix",
+        "type": "INT",
+        "description": "ZIP/postal code prefix of the customer’s location"
+    },
+    {
+        "table": "olist_customers",
+        "column": "customer_city",
+        "type": "VARCHAR",
+        "description": "City where the customer is located"
+    },
+    {
+        "table": "olist_customers",
+        "column": "customer_state",
+        "type": "CHAR",
+        "description": "State where the customer is located"
+    },
+    {
+        "table": "olist_order_items",
+        "column": "order_id",
+        "type": "VARCHAR",
+        "description": "Part of composite key with order_item_id that Identifies the order this item belongs to",
+        "relationships": [
+            {
+                "table": "olist_orders",
+                "column":"order_id"
+            }
+        ]
+    },
+    {
+        "table": "olist_order_items",
+        "column": "order_item_id",
+        "type": "INT",
+        "description": "Part of composite key with order_id that identifies the ordef of an item within the same order"
+    },
+    {
+        "table": "olist_order_items",
+        "column": "product_id",
+        "type": "VARCHAR",
+        "description": "Identifier of the product purchased in the order",
+        "relationships": [
+            {
+                "table": "olist_products",
+                "column":"product_id"
+            }
+        ]
+    },
+    {
+        "table": "olist_order_items",
+        "column": "seller_id",
+        "type": "VARCHAR",
+        "description": "Identifier of the seller who sold the product",
+        "relationships": [
+            {
+                "table": "olist_sellers",
+                "column":"seller_id"
+            }
+        ]
+    },
+    {
+        "table": "olist_order_items",
+        "column": "shipping_limit_date",
+        "type": "DATETIME",
+        "description": "Latest date by which the seller should ship the item"
+    },
+    {
+        "table": "olist_order_items",
+        "column": "price",
+        "type": "DECIMAL",
+        "description": "Price of the product item excluding freight"
+    },
+    {
+        "table": "olist_order_items",
+        "column": "freight_value",
+        "type": "DECIMAL",
+        "description": "Shipping cost charged for the product item"
+    },
+    {
+        "table": "olist_order_payments",
+        "column": "order_id",
+        "type": "VARCHAR",
+        "description": "Part of composite key with payment_sequential that identifies the order being payed for",
+        "relationships": [
+            {
+                "table": "olist_orders",
+                "column":"order_id"
+            }
+        ]
+    },
+    {
+        "table": "olist_order_payments",
+        "column": "payment_sequential",
+        "type": "INT",
+        "description": "Part of composite key with order_id that identifies Sequence number of the payment for an order"
+    },
+    {
+        "table": "olist_order_payments",
+        "column": "payment_type",
+        "type": "VARCHAR",
+        "description": "Method of payment used (e.g., credit card, voucher)"
+    },
+    {
+        "table": "olist_order_payments",
+        "column": "payment_installments",
+        "type": "INT",
+        "description": "Number of installments used for the payment"
+    },
+    {
+        "table": "olist_order_payments",
+        "column": "payment_value",
+        "type": "DECIMAL",
+        "description": "Total amount paid in this payment transaction"
+    },
+    {
+        "table": "olist_orders",
+        "column": "order_id",
+        "type": "VARCHAR",
+        "description": "Unique identifier for each order"
+    },
+    {
+        "table": "olist_orders",
+        "column": "customer_id",
+        "type": "VARCHAR",
+        "description": "Identifier of the customer who placed the order",
+        "relationships": [
+            {
+                "table": "olist_customers",
+                "column":"customer_id"
+            }
+        ]
+        
+    },
+    {
+        "table": "olist_orders",
+        "column": "order_status",
+        "type": "VARCHAR",
+        "description": "Current status of the order (e.g., delivered, shipped, canceled)"
+    },
+    {
+        "table": "olist_orders",
+        "column": "order_purchase_timestamp",
+        "type": "DATETIME",
+        "description": "Date and time when the order was placed"
+    },
+    {
+        "table": "olist_orders",
+        "column": "order_approved_at",
+        "type": "DATETIME",
+        "description": "Date and time when the payment was approved"
+    },
+    {
+        "table": "olist_orders",
+        "column": "order_delivered_carrier_date",
+        "type": "DATETIME",
+        "description": "Date when the order was handed over to the carrier"
+    },
+    {
+        "table": "olist_orders",
+        "column": "order_delivered_customer_date",
+        "type": "DATETIME",
+        "description": "Date when the order was delivered to the customer"
+    },
+    {
+        "table": "olist_orders",
+        "column": "order_estimated_delivery_date",
+        "type": "DATETIME",
+        "description": "Estimated delivery date promised to the customer"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_id",
+        "type": "VARCHAR",
+        "description": "Unique identifier for each product"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_category_name",
+        "type": "VARCHAR",
+        "description": "Category to which the product belongs"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_name_lenght",
+        "type": "INT",
+        "description": "Length of the product name text"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_description_lenght",
+        "type": "INT",
+        "description": "Length of the product description text"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_photos_qty",
+        "type": "INT",
+        "description": "Number of photos available for the product"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_weight_g",
+        "type": "DECIMAL",
+        "description": "Weight of the product in grams"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_length_cm",
+        "type": "DECIMAL",
+        "description": "Length of the product in centimeters"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_height_cm",
+        "type": "DECIMAL",
+        "description": "Height of the product in centimeters"
+    },
+    {
+        "table": "olist_products",
+        "column": "product_width_cm",
+        "type": "DECIMAL",
+        "description": "Width of the product in centimeters"
+    },
+    {
+        "table": "olist_sellers",
+        "column": "seller_id",
+        "type": "VARCHAR",
+        "description": "Unique identifier for each seller"
+    },
+    {
+        "table": "olist_sellers",
+        "column": "seller_zip_code_prefix",
+        "type": "INT",
+        "description": "ZIP/postal code prefix of the seller’s location"
+    },
+    {
+        "table": "olist_sellers",
+        "column": "seller_city",
+        "type": "VARCHAR",
+        "description": "City where the seller is located"
+    },
+    {
+        "table": "olist_sellers",
+        "column": "seller_state",
+        "type": "CHAR",
+        "description": "State where the seller is located"
+    }
+]
