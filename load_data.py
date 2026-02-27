@@ -16,7 +16,7 @@ table_names = [
 ]
 # D:\CLEARQUOTE_WORKS\LLM_Projects\Text_SQL_LLM_System\dataset\preprocessed_data
 for i in range(len(table_names)):
-    pth = f"D:/CLEARQUOTE_WORKS/LLM_Projects/Text_SQL_LLM_System/dataset/preprocessed_data/{table_names[i]}.csv"
+    pth = f"D:/LLM_Projects/Text_SQL_LLM_System/dataset/preprocessed_data/{table_names[i]}.csv"
     df = pd.read_csv(pth)
     df.to_sql(
         table_names[i],
@@ -25,3 +25,4 @@ for i in range(len(table_names)):
         index=False
     )
 print("Data Loaded sucessfully")
+
