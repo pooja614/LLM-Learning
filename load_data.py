@@ -14,7 +14,7 @@ engine = create_engine(
 table_names = [
 'olist_customers','olist_orders','olist_order_payments','olist_products','olist_sellers','olist_order_items'
 ]
-# D:\CLEARQUOTE_WORKS\LLM_Projects\Text_SQL_LLM_System\dataset\preprocessed_data
+# D:\LLM_Projects\Text_SQL_LLM_System\dataset\preprocessed_data
 for i in range(len(table_names)):
     pth = f"D:/LLM_Projects/Text_SQL_LLM_System/dataset/preprocessed_data/{table_names[i]}.csv"
     df = pd.read_csv(pth)
@@ -25,4 +25,5 @@ for i in range(len(table_names)):
         index=False
     )
 print("Data Loaded sucessfully")
+
 
