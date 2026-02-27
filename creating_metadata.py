@@ -40,7 +40,7 @@ for (table_name,) in table_list:
             "description":col_desc[3]
         })
 
-path = "D:/CLEARQUOTE_WORKS/LLM_Projects/Text_SQL_LLM_System/metadata/"
+path = "D:/LLM_Projects/Text_SQL_LLM_System/metadata/"
 with open(path + 'schema_metadata.json', 'w') as f:
     json.dump(metadata, f, indent=4)
 
@@ -79,4 +79,5 @@ with open(path + 'schema_metadata.json', 'w') as f:
 #     "type": "VARCHAR",
 #     "description": "Country where the customer is located"
 #   }
+
 # ]
